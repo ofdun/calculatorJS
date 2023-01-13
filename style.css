@@ -1,0 +1,66 @@
+html,
+body {
+    background-color: rgb(41, 40, 40);
+    font-family: sans-serif;
+    --width: 50px;
+    --height-of-main: 59vh;
+    --height-of-label-box: 10vh;
+    --width-of-main: calc(var(--height-of-main) / 59 * 35);
+    --width-of-label-box: calc(var(--width-of-main) - 2vw);
+    --width-and-height-of-btns: calc(var(--width-of-label-box) / 4.36);
+}
+
+#main-box {
+    border: 3px;
+    border-style: solid;
+    border-color: black;
+    border-radius: 5px;
+    background-color: white;
+    height: var(--height-of-main);
+    width: var(--width-of-main);
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#label-box {
+    border-radius: 5px;
+    border-style: solid;
+    border-color: black;
+    background-color: beige;
+    height: var(--height-of-label-box);
+    width: var(--width-of-label-box);
+    position: absolute;
+    top: 13%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#label {
+    height: var(--height-of-label-box);
+    width: var(--width-of-label-box);
+    position: absolute;
+    text-align: right;
+    font-size: 9vh;
+    overflow: hidden;
+}
+
+
+.first-row {
+    margin-top: calc(var(--height-of-label-box) + 2vh);
+}
+
+.btn {
+    border-radius: 5px;
+    font-size: calc(var(--width-and-height-of-btns) / 2);
+    text-align: center;
+    background-color: beige;
+    width: var(--width-and-height-of-btns);
+    height: var(--width-and-height-of-btns);
+    display: table-cell;
+}
+
+.not-first-row {
+    margin-top: 5px;
+}
