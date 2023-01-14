@@ -17,9 +17,9 @@ body {
 #main-box {
     border: 3px;
     border-style: solid;
-    border-color: black;
+    border-color: rgb(255, 255, 255);
     border-radius: 5px;
-    background-color: white;
+    background-color: rgb(104, 103, 103);
     height: var(--height-of-main);
     width: var(--width-of-main);
     position: absolute;
@@ -81,11 +81,11 @@ body {
 
 
 .last-elem {
-    right: -25%;
+    right: -27.5%;
 }
 
 .third-elem {
-    right: -16%;
+    right: -18%;
 }
 
 .sec-elem {
@@ -98,11 +98,11 @@ body {
 }
 
 .last-row-sec {
-    left: 10%;
+    left: 12%;
 }
 
 .last-row-last {
-    left: 19%;
+    left: 21.5%;
 }
 
 .first-elem {

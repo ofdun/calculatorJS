@@ -137,35 +137,112 @@ window.onload = function () {
     buttonEqual.onclick = function () {
         if (!operation) { }
         if (operation == '%') {
-            operation = null
             spaceHTML.innerHTML = firstNum / 100 * Number(spaceHTML.innerHTML) + '%'
-            operationWasUsed = false
             needac = true
         }
         if (operation == '^') {
-            operation = null
             spaceHTML.innerHTML = firstNum ** Number(spaceHTML.innerHTML)
-            operationWasUsed = false
         }
 
+        if (operation == '/') {
+            spaceHTML.innerHTML = firstNum / Number(spaceHTML.innerHTML)
+        }
+
+        if (operation == '*') {
+            spaceHTML.innerHTML = firstNum * Number(spaceHTML.innerHTML)
+        }
+
+        if (operation == '-') {
+            spaceHTML.innerHTML = firstNum - Number(spaceHTML.innerHTML)
+        }
+
+        if (operation == '+') {
+            spaceHTML.innerHTML = firstNum + Number(spaceHTML.innerHTML)
+        }
+
+        operation = null
+        operationWasUsed = false
+
     }
 
     buttonPercent.onclick = function () {
-        if (spaceHTML.innerHTML == 0) { spaceHTML.innerHTML = 'E' }
-    }
-
-    buttonPercent.onclick = function () {
-        firstNum = Number(spaceHTML.innerHTML)
-        operation = '%'
-        operationWasUsed = true
-        spaceHTML.innerHTML = ''
+        if (needac) { }
+        else {
+            {
+                if (spaceHTML.innerHTML == 0) {
+                    spaceHTML.innerHTML = 'E'
+                    needac = true
+                }
+                firstNum = Number(spaceHTML.innerHTML)
+                operation = '%'
+                operationWasUsed = true
+                spaceHTML.innerHTML = ''
+            }
+        }
     }
 
     buttonExponentiation.onclick = function () {
-        firstNum = Number(spaceHTML.innerHTML)
-        operation = '^'
-        operationWasUsed = true
-        spaceHTML.innerHTML = ''
+
+        {
+            if (needac) { }
+            else {
+                firstNum = Number(spaceHTML.innerHTML)
+                operation = '^'
+                operationWasUsed = true
+                spaceHTML.innerHTML = ''
+            }
+        }
     }
 
+    buttonDivision.onclick = function () {
+
+        {
+            if (needac) { }
+            else {
+                firstNum = Number(spaceHTML.innerHTML)
+                operation = '/'
+                operationWasUsed = true
+                spaceHTML.innerHTML = ''
+            }
+        }
+    }
+
+    buttonMultiply.onclick = function () {
+
+        {
+            if (needac) { }
+            else {
+                firstNum = Number(spaceHTML.innerHTML)
+                operation = '*'
+                operationWasUsed = true
+                spaceHTML.innerHTML = ''
+            }
+        }
+    }
+
+    buttonMinus.onclick = function () {
+
+        {
+            if (needac) { }
+            else {
+                firstNum = Number(spaceHTML.innerHTML)
+                operation = '-'
+                operationWasUsed = true
+                spaceHTML.innerHTML = ''
+            }
+        }
+    }
+
+    buttonPlus.onclick = function () {
+
+        {
+            if (needac) { }
+            else {
+                firstNum = Number(spaceHTML.innerHTML)
+                operation = '+'
+                operationWasUsed = true
+                spaceHTML.innerHTML = ''
+            }
+        }
+    }
 }
