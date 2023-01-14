@@ -3,11 +3,15 @@ body {
     background-color: rgb(41, 40, 40);
     font-family: sans-serif;
     --width: 50px;
-    --height-of-main: 69vh;
+    --height-of-main: 62vh;
     --height-of-label-box: 10vh;
-    --width-of-main: calc(var(--height-of-main) / 69 * 35);
+    --width-of-main: calc(var(--height-of-main) / 62 * 35);
     --width-of-label-box: calc(var(--width-of-main) - 2vw);
     --width-and-height-of-btns: calc(var(--width-of-label-box) / 6);
+    --space: calc(var(--width-of-main) - var(--width-of-label-box));
+    --space-between-btn-n-main-box: calc(var(--space-between-btn-n-main-box) / 2);
+    --width-of-btns-box: var(--width-of-main);
+    --height-of-btns-box: calc(var(--height-of-label-box) / 1.2)
 }
 
 #main-box {
@@ -54,24 +58,54 @@ body {
     width: var(--width-and-height-of-btns);
     height: var(--width-and-height-of-btns);
     position: relative;
-    display: inline-block;
     top: 50%;
-    transform: translate(0, -50%);
-    margin-left: calc((var(--width-of-main) - var(--width-of-label-box)) / 2);
-    margin-right: calc((var(--width-of-main) - var(--width-of-label-box)) / 4);
+
+    transform: translate(5%, -50%);
+
 }
 
 .not-first-row {
-    margin-top: 5px;
+    margin-top: 0px;
 }
 
 
 .rectangle {
-    margin-top: calc(var(--height-of-label-box) + 7vh);
+    background-color: red;
+    margin-top: calc(var(--height-of-label-box) + 10vh);
 
 }
 
 #rectangle {
-    height: var(--height-of-label-box);
-    width: var(--width-of-main);
+    height: var(--height-of-btns-box);
+    width: var(--width-of-btns-box);
+}
+
+
+.last-elem {
+    right: -25%;
+}
+
+.third-elem {
+    right: -16%;
+}
+
+.sec-elem {
+    right: -8%;
+}
+
+.zero {
+    width: calc(var(--width-and-height-of-btns) * 2 + 8%);
+    left: 0.5%;
+}
+
+.last-row-sec {
+    left: 10%;
+}
+
+.last-row-last {
+    left: 19%;
+}
+
+.first-elem {
+    left: 1.5%;
 }

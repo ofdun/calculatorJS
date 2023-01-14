@@ -21,87 +21,90 @@ window.onload = function () {
     let buttonPlus = document.getElementById('plus')
 
     let buttonZero = document.getElementById('zero')
-    let buttonZero2 = document.getElementById('zero2')
     let buttonDot = document.getElementById('dot')
     let buttonEqual = document.getElementById('equal')
 
     let firstNum
-    let secondNum
+    //let secondNum
+    var doanythingnotc = true
     let operation
 
     let spaceHTML = document.getElementById("label")
     var operationWasUsed = false
 
     buttonC.onclick = function () {
+        if (doanythingnotc == true) { doanythingnotc == false }
         spaceHTML.innerHTML = 0
         operationWasUsed = false
     }
 
     buttonOne.onclick = function () {
-        if (spaceHTML.innerHTML == 'E') { }
-        if (spaceHTML.innerHTML == 0) { spaceHTML.innerHTML = 1 }
-        else { spaceHTML.innerHTML += 1 }
+        if (spaceHTML.innerHTML == 'E' || !doanythingnotc) { }
+        else {
+            if (spaceHTML.innerHTML == 0) { spaceHTML.innerHTML = 1 }
+            else { spaceHTML.innerHTML += 1 }
+        }
 
     }
 
     buttonTwo.onclick = function () {
-        if (spaceHTML.innerHTML == 'E') { }
+        if (spaceHTML.innerHTML == 'E' || !doanythingnotc) { }
         if (spaceHTML.innerHTML == 0) { spaceHTML.innerHTML = 2 }
         else { spaceHTML.innerHTML += 2 }
 
     }
 
     buttonThree.onclick = function () {
-        if (spaceHTML.innerHTML == 'E') { }
+        if (spaceHTML.innerHTML == 'E' || !doanythingnotc) { }
         if (spaceHTML.innerHTML == 0) { spaceHTML.innerHTML = 3 }
         else { spaceHTML.innerHTML += 3 }
 
     }
 
     buttonFour.onclick = function () {
-        if (spaceHTML.innerHTML == 'E') { }
+        if (spaceHTML.innerHTML == 'E' || !doanythingnotc) { }
         if (spaceHTML.innerHTML == 0) { spaceHTML.innerHTML = 4 }
         else { spaceHTML.innerHTML += 4 }
 
     }
 
     buttonFive.onclick = function () {
-        if (spaceHTML.innerHTML == 'E') { }
+        if (spaceHTML.innerHTML == 'E' || !doanythingnotc) { }
         if (spaceHTML.innerHTML == 0) { spaceHTML.innerHTML = 5 }
         else { spaceHTML.innerHTML += 5 }
 
     }
 
     buttonSix.onclick = function () {
-        if (spaceHTML.innerHTML == 'E') { }
+        if (spaceHTML.innerHTML == 'E' || !doanythingnotc) { }
         if (spaceHTML.innerHTML == 0) { spaceHTML.innerHTML = 6 }
         else { spaceHTML.innerHTML += 6 }
 
     }
 
     buttonSeven.onclick = function () {
-        if (spaceHTML.innerHTML == 'E') { }
+        if (spaceHTML.innerHTML == 'E' || !doanythingnotc) { }
         if (spaceHTML.innerHTML == 0) { spaceHTML.innerHTML = 7 }
         else { spaceHTML.innerHTML += 7 }
 
     }
 
     buttonEight.onclick = function () {
-        if (spaceHTML.innerHTML == 'E') { }
+        if (spaceHTML.innerHTML == 'E' || !doanythingnotc) { }
         if (spaceHTML.innerHTML == 0) { spaceHTML.innerHTML = 8 }
         else { spaceHTML.innerHTML += 8 }
 
     }
 
     buttonNine.onclick = function () {
-        if (spaceHTML.innerHTML == 'E') { }
+        if (spaceHTML.innerHTML == 'E' || !doanythingnotc) { }
         if (spaceHTML.innerHTML == 0) { spaceHTML.innerHTML = 9 }
         else { spaceHTML.innerHTML += 9 }
 
     }
 
     buttonZero.onclick = function () {
-        if (spaceHTML.innerHTML == 'E') { }
+        if (spaceHTML.innerHTML == 'E' || !doanythingnotc) { }
         if (spaceHTML.innerHTML == 0) { }
         else { spaceHTML.innerHTML += 0 }
     }
@@ -112,11 +115,23 @@ window.onload = function () {
 
     buttonEqual.onclick = function () {
         if (!operation) { }
+        if (operation == '%') {
+            operation = null
+            spaceHTML.innerHTML = firstNum / 100 * Number(spaceHTML.innerHTML) + '%'
+            operationWasUsed = false
+            doanythingnotc = false
+        }
     }
 
     buttonPercent.onclick = function () {
         if (spaceHTML.innerHTML == 0) { spaceHTML.innerHTML = 'E' }
     }
 
+    buttonPercent.onclick = function () {
+        firstNum = Number(spaceHTML.innerHTML)
+        operation = '%'
+        operationWasUsed = true
+        spaceHTML.innerHTML = ''
+    }
 
 }
