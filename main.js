@@ -26,20 +26,20 @@ window.onload = function () {
 
     let firstNum
     //let secondNum
-    var doanythingnotc = true
+    var needac = false
     let operation
 
     let spaceHTML = document.getElementById("label")
     var operationWasUsed = false
 
     buttonC.onclick = function () {
-        if (doanythingnotc == true) { doanythingnotc == false }
+        if (needac) { needac = false }
         spaceHTML.innerHTML = 0
         operationWasUsed = false
     }
 
     buttonOne.onclick = function () {
-        if (spaceHTML.innerHTML == 'E' || !doanythingnotc) { }
+        if (spaceHTML.innerHTML == 'E' || needac) { }
         else {
             if (spaceHTML.innerHTML == 0) { spaceHTML.innerHTML = 1 }
             else { spaceHTML.innerHTML += 1 }
@@ -48,69 +48,90 @@ window.onload = function () {
     }
 
     buttonTwo.onclick = function () {
-        if (spaceHTML.innerHTML == 'E' || !doanythingnotc) { }
-        if (spaceHTML.innerHTML == 0) { spaceHTML.innerHTML = 2 }
-        else { spaceHTML.innerHTML += 2 }
+        if (spaceHTML.innerHTML == 'E' || needac) { }
+        else {
+            if (spaceHTML.innerHTML == 0) { spaceHTML.innerHTML = 2 }
+            else { spaceHTML.innerHTML += 2 }
+        }
 
     }
 
     buttonThree.onclick = function () {
-        if (spaceHTML.innerHTML == 'E' || !doanythingnotc) { }
-        if (spaceHTML.innerHTML == 0) { spaceHTML.innerHTML = 3 }
-        else { spaceHTML.innerHTML += 3 }
+        if (spaceHTML.innerHTML == 'E' || needac) { }
+        else {
+            if (spaceHTML.innerHTML == 0) { spaceHTML.innerHTML = 3 }
+            else { spaceHTML.innerHTML += 3 }
+        }
 
     }
 
     buttonFour.onclick = function () {
-        if (spaceHTML.innerHTML == 'E' || !doanythingnotc) { }
-        if (spaceHTML.innerHTML == 0) { spaceHTML.innerHTML = 4 }
-        else { spaceHTML.innerHTML += 4 }
+        if (spaceHTML.innerHTML == 'E' || needac) { }
+        else {
+            if (spaceHTML.innerHTML == 0) { spaceHTML.innerHTML = 4 }
+            else { spaceHTML.innerHTML += 4 }
+        }
 
     }
 
     buttonFive.onclick = function () {
-        if (spaceHTML.innerHTML == 'E' || !doanythingnotc) { }
-        if (spaceHTML.innerHTML == 0) { spaceHTML.innerHTML = 5 }
-        else { spaceHTML.innerHTML += 5 }
+        if (spaceHTML.innerHTML == 'E' || needac) { }
+        else {
+            if (spaceHTML.innerHTML == 0) { spaceHTML.innerHTML = 5 }
+            else { spaceHTML.innerHTML += 5 }
+        }
 
     }
 
     buttonSix.onclick = function () {
-        if (spaceHTML.innerHTML == 'E' || !doanythingnotc) { }
-        if (spaceHTML.innerHTML == 0) { spaceHTML.innerHTML = 6 }
-        else { spaceHTML.innerHTML += 6 }
+        if (spaceHTML.innerHTML == 'E' || needac) { }
+        else {
+            if (spaceHTML.innerHTML == 0) { spaceHTML.innerHTML = 6 }
+            else { spaceHTML.innerHTML += 6 }
+        }
 
     }
 
     buttonSeven.onclick = function () {
-        if (spaceHTML.innerHTML == 'E' || !doanythingnotc) { }
-        if (spaceHTML.innerHTML == 0) { spaceHTML.innerHTML = 7 }
-        else { spaceHTML.innerHTML += 7 }
+        if (spaceHTML.innerHTML == 'E' || needac) { }
+        else {
+            if (spaceHTML.innerHTML == 0) { spaceHTML.innerHTML = 7 }
+            else { spaceHTML.innerHTML += 7 }
+        }
 
     }
 
     buttonEight.onclick = function () {
-        if (spaceHTML.innerHTML == 'E' || !doanythingnotc) { }
-        if (spaceHTML.innerHTML == 0) { spaceHTML.innerHTML = 8 }
-        else { spaceHTML.innerHTML += 8 }
+        if (spaceHTML.innerHTML == 'E' || needac) { }
+        else {
+            if (spaceHTML.innerHTML == 0) { spaceHTML.innerHTML = 8 }
+            else { spaceHTML.innerHTML += 8 }
+        }
 
     }
 
     buttonNine.onclick = function () {
-        if (spaceHTML.innerHTML == 'E' || !doanythingnotc) { }
-        if (spaceHTML.innerHTML == 0) { spaceHTML.innerHTML = 9 }
-        else { spaceHTML.innerHTML += 9 }
+        if (spaceHTML.innerHTML == 'E' || needac) { }
+        else {
+            if (spaceHTML.innerHTML == 0) { spaceHTML.innerHTML = 9 }
+            else { spaceHTML.innerHTML += 9 }
+        }
 
     }
 
     buttonZero.onclick = function () {
-        if (spaceHTML.innerHTML == 'E' || !doanythingnotc) { }
-        if (spaceHTML.innerHTML == 0) { }
-        else { spaceHTML.innerHTML += 0 }
+        if (spaceHTML.innerHTML == 'E' || needac) { }
+        else {
+            if (spaceHTML.innerHTML == 0) { }
+            else { spaceHTML.innerHTML += 0 }
+        }
     }
 
     buttonDot.onclick = function () {
-        spaceHTML.innerHTML += '.'
+        if (needac) { }
+        else {
+            spaceHTML.innerHTML += '.'
+        }
     }
 
     buttonEqual.onclick = function () {
@@ -119,8 +140,14 @@ window.onload = function () {
             operation = null
             spaceHTML.innerHTML = firstNum / 100 * Number(spaceHTML.innerHTML) + '%'
             operationWasUsed = false
-            doanythingnotc = false
+            needac = true
         }
+        if (operation == '^') {
+            operation = null
+            spaceHTML.innerHTML = firstNum ** Number(spaceHTML.innerHTML)
+            operationWasUsed = false
+        }
+
     }
 
     buttonPercent.onclick = function () {
@@ -130,6 +157,13 @@ window.onload = function () {
     buttonPercent.onclick = function () {
         firstNum = Number(spaceHTML.innerHTML)
         operation = '%'
+        operationWasUsed = true
+        spaceHTML.innerHTML = ''
+    }
+
+    buttonExponentiation.onclick = function () {
+        firstNum = Number(spaceHTML.innerHTML)
+        operation = '^'
         operationWasUsed = true
         spaceHTML.innerHTML = ''
     }

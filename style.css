@@ -70,7 +70,6 @@ body {
 
 
 .rectangle {
-    background-color: red;
     margin-top: calc(var(--height-of-label-box) + 10vh);
 
 }
